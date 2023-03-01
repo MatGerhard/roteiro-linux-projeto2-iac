@@ -1,0 +1,30 @@
+PROJETO DIO - Trata-se de um arquivo de texto em formato de roteiro que descreve a elaboração de um script.
+O script tem por finalidade o provisionamento do um servidor web (apache).
+Os passos a serem seguidos para a elaboração do script são:
+* Atualizar o servidor;
+* Instalar o Apache2;
+* Instalar o Unzip;
+* Baixar aplicação disponível no endereço https://github.com/denilsonbonatti/linux-site-dio/archive/refs/heads/main.zip no diretório tmp;
+* Copiar os arquivos no diretório padrão do apache.
+
+//Iniciando a execução do projeto
+- Ir ao diretório de script (criar um caso não exista): cd/script/
+- Utilizar o Nano: nano script-iacl.sh
+- Criar um bash: #!/bin/bash
+
+- Criar echo: echo "Atualizando servidor"
+//Utilizar echo ajuda a informar sobre o processo que está sendo realizado (informa o que acontece no comando seguinte)
+- Realizar atualizações: apt-get update
+- Realizar upgrades: apt-get upgrade -y
+- Instalar apache: apt-get install apache2 -y
+- Instalar Unzip: apt-get install unzip -y
+
+- Criar echo: echo "Baixando e copiando arquivos da aplicação"
+- Mudança de diretório: cd /tmp
+- Utilizar wget para fazer um download por link: wget https://github.com/denilsonbonatti/linux-site-dio/archive/refs/heads/main.zip
+- Fazer o unzip do arquivo: unzip main.zip
+- Mudança de diretório: cd linux-site-dio-main
+- Copiar os arquivos para o diretório do Apache: cp -R * /var/www/html/
+
+//Salvar o script com CTRL+O
+- Dar permissão para execução do script: chmod +x script-iac1.sh
